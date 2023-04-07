@@ -1,0 +1,446 @@
+/* 
+Redesigned layout
+Jay-ar Olivas
+March 14, 2023  
+*/
+/* ========Start of min width 992px======= */
+@media (min-width: 992px) {
+    .rightDesign {
+        margin-left: 22%;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 78%;
+        flex: 0 0 78%;
+        max-width: 78%;
+        min-height: 100vh;
+    }
+    .leftDesign {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 22%;
+        flex: 0 0 22%;
+        max-width: 22%;
+        padding: 25px;
+        text-align: center;
+    }
+    .desktopMargin {
+        margin-top: 30px !important;
+    }
+}
+/* ========End of min width 992px======= */
+
+/* Start of Max 1199px */
+@media (max-width: 1199px) {
+    .rightDesign {
+        margin-left: 27%;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 78%;
+        flex: 0 0 78%;
+        max-width: 94%;
+    }
+}
+/* End of Max 1199px */
+
+/* Start of min width 1200px */
+@media (min-width: 1200px) {
+	.modal-lg {
+	    max-width: 1200px !important;
+	}
+	.modal-content {
+		border-radius: 10px;
+	}
+	.modal-header {
+		border-radius: 8px 8px 0 0;
+	}
+	.modal-body {
+		padding: 40px !important;
+	}
+} 
+/* End of min width 1200px */
+
+/* ======Start of min width 1800px====== */
+@media (min-width: 1800px) {
+    .leftDesign {
+        padding: 25px 0;
+        max-width: 400px !important;
+    }
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    .left-container {
+        max-width: 85%;
+        margin: auto;
+    }
+    .carousel {
+        margin-top: 15px;
+    }
+    .icon-step-by-step .icons {
+        font-size: 50px;
+        color: #d3d3d3;
+    }
+    .icon-step-by-step hr {
+        width: 103px;
+        border: 2px solid;
+        position: absolute;
+        top: 16px;
+        left: -53px;
+        z-index: -1;
+        color: #d3d3d3;
+    }
+    .multi-step-form {
+        max-width: 1500px !important;
+        margin: auto;
+    }
+    .icon-position .icon-circle {
+        top: 14px !important;
+    }
+}
+/* ======End of min width 1800px====== */
+
+/* Start of max width 991px */
+@Media (max-width: 991px) {
+    .leftDesign {
+        position: relative;
+        height: auto !important;
+    }
+    .leftDesign img {
+        width: 230px;
+        padding: 10px;
+        margin-bottom: unset !important;
+    }
+    .rightDesign {
+        margin-left: unset !important;
+        max-width: 100%;
+        padding: 0 15px;
+        flex: 0 0 100%;
+    }
+    .form-row > .col, .form-row > [class*="col-"] {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+    .carousel {
+        display: none;
+    }
+    .icon-step-by-step ul li {
+        width: 100px;
+    }
+    .rightDesign header {
+        margin-top: 30px !important;
+    }
+    .icon-step-by-step .icons {
+        font-size: 30px;
+    }
+    .icon-step-by-step hr {
+        top: 2px;
+        left: -40px;
+        width: 80px;
+        border: 1.5px solid;
+    }
+    .icon-step-by-step ul li .progress-title {
+        font-size: 9px;
+        font-weight: 500;
+    }
+    .icon-position .icon-circle {
+        top: 0px;
+        left: 85px;
+    }
+    .icon-step-by-step #hr-circle1, #hr-circle2 {
+        width: 40px;
+        left: 100px;
+    }
+    .listButton button span:nth-child(1) {
+        font-weight: 600;
+        font-size: 12px;
+    }
+    .listButton span {
+        font-size: 11px !important;
+    }
+    .radioPosition .checkBoxESC {
+        right: -98px;
+        top: 30px;
+    }
+    /* .btnWorkPosition, .btnPositon {
+        margin-bottom: 0;
+    } */
+    .btnPosition .buttonRow {
+        right: 0 !important;
+        left: unset !important;
+        margin-top: 5px;
+        z-index: 10;
+    }
+    .btnPosition .buttonRowTablet {
+        right: 30px !important;
+        left: unset !important;
+        margin-top: 5px;
+    }
+    .hideOnMobile {
+        display: none;
+    }
+    .btnPositon {
+    	bottom: 20px;
+    }
+}
+/* End of max width 991px */
+
+/* Start of max width 1199px */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .imagePrevContainer {
+        width: 100% !important;
+    }
+    .rightDesign {
+        margin-left: 22%;
+    }
+    .icon-step-by-step ul li {
+        width: 111px;
+    }
+    .icon-step-by-step ul li .progress-title {
+        font-size: 10px;
+    }
+    .icon-step-by-step hr {
+        width: 83px;
+        left: -40px;
+    }
+    .icon-position .icon-circle {
+        left: 95px;
+    }
+    .icon-step-by-step #hr-circle1, #hr-circle2 {
+        width: 40px;
+        left: 110px;
+    }
+    .radioPosition .checkBoxESC {
+        right: -21px;
+    }
+}
+/* End of max width 1199px */
+
+/* Start of max width 1199px */
+@media (max-width: 1199px) {
+    .g-recaptcha {
+        transform:scale(0.77);
+        -webkit-transform:scale(0.77);
+        transform-origin:0 0;
+        -webkit-transform-origin:0 0;
+    }
+    .g-recaptcha iframe {
+        width: 300px;
+        height: 100px;
+    }
+}
+/* End of max width 1199px */
+
+/* Start of max width 767px */
+@Media (max-width: 767px) {
+    .icon-step-by-step ul li {
+        width: 60px;
+    }
+    .icon-step-by-step ul li .progress-title {
+        display: none;
+    }
+    .icon-step-by-step hr {
+        top: 2px;
+        left:-20px;
+        width: 38px;
+        border: 1.5px solid;
+    }
+    .icon-position .icon-circle {
+        top: 5px;
+        left: 50px;
+        font-size: 20px;
+    }
+    .icon-step-by-step #hr-circle1, #hr-circle2 {
+        width: 18px;
+        left: 60px;
+    }
+    .listButton button span:nth-child(2), .listButton span:nth-child(3) {
+        display: none;
+    }
+    .btnPositon .listButton {
+    	border-radius: 50px;
+    }
+    .btnPositon .listButton button {
+        width: 145px;
+        border-radius: 50px;
+        padding: 20px;
+    }
+    .btnPositon .listButtonPrev button {
+        padding: 20px 20px 20px 45px;
+        width: 145px;
+    }
+    .listButton .btnIcon {
+        right: 15px;
+        font-size: 30px;
+    }
+    .mobile {
+        display: block;
+    }
+    .addRemovePosition {
+        margin-bottom: 30px;
+    }
+    .HideMe {
+        display: none;
+    }
+    .btnPosition .btnAction {
+        right: 0;
+        left: unset !important;
+        transform: translate(0px);
+    }
+    .addRemovePosition {
+        margin-bottom: 30px !important;
+    }
+    .radioPosition .checkBoxESC {
+        right: -180px;
+        top: 0;
+    }
+    .leftDesign img {
+        width: 150px;
+    }
+    .rightDesign header h1 {
+        font-size: 15px;
+    }
+    .form-card h5 {
+        font-size: 12px;
+    }
+    label {
+        font-size: 11px;
+    }
+    .form-group {
+        margin-bottom: .5rem !important;
+    }
+    .radioPosition {
+        position: relative;
+        top: -12px;
+        margin-top: 10px;
+    }
+    .breakLine {
+        margin-top: 50px;
+    }
+    input, select {
+        border-radius: 8px !important;
+        border: 1px solid #ced4da !important;
+    }
+    .mobileMargin {
+        margin-top: 50px;
+    }
+    .mobile {
+        float: unset !important;
+    }
+    .btnClose, #save {
+    	font-size: 12px !important;
+    	padding: 10px 30px;
+    }
+    #html_element {
+    	transform: scale(0.77);
+    	transform-origin: 0 0;
+    }
+    .previewBtnPosition button {
+        width: 125px !important;
+        border: 2px solid #7c7c7c !important;
+        padding: 10px 50px 10px 45px !important;
+        border-radius: 15px !important;
+    }
+    .previewBtnPosition button .btnIconPrev {
+        left: 23px !important;
+        font-size: 27px !important;
+        top: 50%;
+        transform: translateY(-50%);
+    }   
+    .previewBtnPosition button span {
+        font-size: 12px !important;
+    } 
+}
+/* End of max width 767px */
+
+/* Start of max width 414px */
+@media (max-width: 414px) {
+    .icon-step-by-step ul li {
+        width: 50px;
+    }
+    .icon-step-by-step hr {
+        left: -15px;
+        width: 30px;
+    }
+    .icon-position .icon-circle {
+        top: 7.3px;
+        left: 41px;
+        font-size: 15px;
+    }
+    .icon-step-by-step #hr-circle1, #hr-circle2 {
+        width: 16px;
+        left: 50px;
+    }
+}
+/* End of max width 414px */
+
+/* Start of min width 768px */
+@media (min-width: 768px) {
+    .desktop {
+        display: block;
+    }
+    .btnClose, #save {
+    	font-size: 14px !important;
+    }
+}
+/* End of min width 768px */
+
+/* Start of max width 320px */
+@media (max-width: 320px) {
+    .icon-step-by-step ul li {
+        width: 38px;
+    }
+    .btnPositon .listButtonPrev button {
+        padding: 20px 20px 20px 45px;
+        width: 113px;
+    }
+    .listButtonPrev .btnIconPrev {
+        position: absolute;
+        left: 20px;
+        font-size: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .btnPositon .listButton button {
+        width: 113px;
+        padding: 13px 15px;
+    }
+    .listButton .btnIcon {
+        right: 6px;
+        font-size: 25px;
+    }
+    .listButton span {
+        font-size: 11px !important;
+    }
+    .buttonRow .btnAddRemove {
+        font-weight: 600 !important;
+    }
+    .buttonRow .btnAddRemoveIcon {
+        font-size: 25px !important;
+        left: 8px !important;
+    }
+    .radioPosition .checkBoxESC {
+        right: -89px;
+        top: 20px;
+    }
+    .icon-position .icon-circle {
+        display: none;
+    }
+    .submitButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .submitButton .listButtonPrev {
+        width: unset !important;
+    }
+    .submitButton .listButtonPrev button {
+        width: 118px !important;
+        padding-left: 40px !important;
+    }
+    .listButtonPrev .btnIconPrev {
+        left: 10px !important;
+        font-size: 25px !important;
+    }
+    .submitButton .listButtonPrev span {
+        font-size: 11px !important;
+    }
+
+}
+/* End of max width 320px */

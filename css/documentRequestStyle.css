@@ -1,0 +1,349 @@
+.multiSteps {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    margin-top: 30px;
+}
+.multiSteps ul {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+}
+.multiSteps ul .navList {
+    color: #fff;
+    padding: 15px;
+    list-style: none;
+    font-weight: 700;
+    text-align: left;
+    padding-left: 20px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 10px 0 0 10px;
+}
+.multiSteps ul .navList.active {
+    transition: .4s ease-in;
+    color: #0B50A2;
+    background: #fff;
+    box-shadow: 0px 3px 0px 0 #0000004d;
+}
+.multiSteps ul .navList.active > .iconCheck {
+    display: none !important;
+}
+.unclickable {
+    pointer-events: none;
+}
+.multiSteps .navList .iconCheck {
+    position: absolute;
+    left: -6px;
+    top: 50%;
+    transform: translateY(-57%);
+    font-size: 18px;
+    display: none;
+}
+.rightDesign .btnPositon {
+    position: absolute;
+    right: 25px;
+    bottom: 0;
+}
+.form-card {
+    min-height: 80vh;
+    position: relative;
+    margin-bottom: 30px;
+}
+.descriptionNote {
+    margin: 15px 0 40px;
+}
+.descriptionNote ol {
+    padding-left: 15px;
+}
+#pickup, #delivery {
+    margin-bottom: 0;
+    line-height: 22px;
+}
+input[type="radio"]:checked + label {
+    font-weight: 700;
+    font-size: 13px;
+}
+.addDocumentBtn {
+    border: none !important;
+    border-radius: 20px !important;
+    background: #003399;
+    color: #fff;
+    padding: 10px 20px 10px 35px;
+    cursor: pointer;
+}
+.addDocumentBtn:hover {
+    background: #0B50A2;
+    transition: .3s;
+}
+.iconPlus {
+    color: #fff;
+    position: absolute;
+    left: 10px;
+    font-size: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.docDetailList .docDetailsTitle {
+    vertical-align: bottom;
+    border: unset;
+    background: #efefef;
+    color: #003399;
+}
+.docDetailList .docDetailsTitle th {
+    border: none;
+}
+.docDetailList .docDetailsTitle th:first-child {
+    border-radius: 10px 0 0 10px;
+}
+.docDetailList .docDetailsTitle th:last-child {
+    border-radius: 0 10px 10px 0;
+}
+.docDetailList th {
+    text-align: center;
+}
+.docDetailList td {
+    vertical-align: middle;
+    border-bottom: 1px solid #dee2e6;
+    border-top: 0;
+}
+.docDetailList .totalCharge {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.tableBackground {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.form-row > .col, .form-row > [class*="col-"] {
+    padding-right: 5px;
+}
+#quantity, .documentPrice {
+    text-align: center;
+}
+.tableBackground .documentPrice {
+    border: none !important;
+    border-bottom: 2px solid #0000007a!important;
+    border-radius: unset !important;
+}
+.tableBackground .documentPrice[readonly] {
+    background-color: #ffffff;
+    opacity: 1;
+}
+.tableBackground h6 {
+    color: #0b50a2;
+    font-weight: 700;
+    background: #efefef;
+    margin-bottom: 20px;
+    padding: 12px;
+    border-radius: 10px;
+}
+.tableBackgroundDetails {
+    overflow-x: auto;
+}
+.tableBackgroundDetails .docDetailList {
+    table-layout: fixed;
+}
+.slideDetails img {
+    width: 30px;
+}
+.slideDetails {
+    display: none;
+    float: right;
+}
+input[type="file"] {
+    padding: 0.45rem 0.7rem !important;
+    border: 2px solid #ced4da !important;
+    border-radius: 8px !important;
+}
+::-webkit-file-upload-button {
+    border: none !important;
+    border-radius: 5px !important;
+}
+.actionButtons {
+    position: relative;
+    font-weight: 700;
+    cursor: pointer;
+    padding-left: 22px;
+}
+.actionButtons:hover {
+    color: #003399;
+    transition: .3s;
+}
+.delete:hover {
+    color: #ff0000;
+    transition: .3s;
+}
+.leftBtn {
+    margin-right: 5px;
+}
+.actionIcon {
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.addButton {
+    position: relative;
+}
+.docFileLoop {
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+.descriptionNote ul {
+    padding-left: 30px;
+}
+.previewBtnPosition {
+    position: unset !important;
+    margin-top: 50px;
+}
+.mobileViewSteps {
+    display: none;
+}
+.mobileViewSteps ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    margin-top: 20px;
+}
+.mobileViewSteps .navListMobile {
+    position: relative;
+    background: #d3d3d3;
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-weight: 600;
+    margin: 10px;
+    color: #fff;
+    transition: .4s ease-in;
+}
+.mobileViewSteps .navListMobile.activeMobile {
+    background: #003399;
+}
+.mobileViewSteps .lineSteps {
+    position: absolute;
+    border: 2px solid;
+    width: 35px;
+    left: -29px;
+    top: 20%;
+    transform: translateY(-60%);
+    color: #d3d3d3;
+    z-index: -1;
+    transition: .4s ease-in;
+}
+.lineSteps.activeMobile {
+    color: #003399;
+}
+
+
+/* Start of max 320px */
+@media (max-width: 320px) {
+    .mobileViewSteps .navListMobile {
+        padding: 8px 6px !important;
+        font-size: 10px;
+    }
+    .previewBtnPosition button .btnIconPrev {
+        left: 10px !important;
+    }
+}
+/* End of max 320px */
+/* Start of max 420px */
+@media (max-width: 420px) {
+    .mobileViewSteps .navListMobile {
+        margin: 3px !important;
+    }
+}
+/* End of max 420px */
+/* Start of max 767px */
+@media (max-width: 767px) {
+    .tableBackground .documentPrice {
+        border-bottom: 1px solid #0000007a !important;
+    }
+    .docTypeBtnPosition {
+        margin-top: 10px;
+    }
+    .marginBottom {
+        margin-bottom: 20px;
+    }
+    .rightDesign .btnPositon {
+        bottom: 15px;
+    }
+    .mobileViewSteps .navListMobile {
+        padding: 7px 10px;
+        border-radius: 6px;
+        font-weight: 400;
+        margin: 8px;
+    }
+    .mobileViewSteps li:first-child {
+        margin-left: 0 !important;
+    }
+    .mobileViewSteps li:last-child {
+        margin-right: 0 !important;
+    }
+    .previewBtnPosition button {
+        width: 125px !important;
+        border: 2px solid #7c7c7c !important;
+        padding: 10px 50px 10px 45px !important;
+        border-radius: 15px !important;
+    }
+    .previewBtnPosition button .btnIconPrev {
+        left: 23px;
+        font-size: 27px !important;
+        top: 50%;
+        transform: translateY(-50%);
+    }   
+    .previewBtnPosition button span {
+        font-size: 12px !important;
+    } 
+}
+/* End of max 767px */
+/* Start of max 1199px */
+@media (max-width: 1199px) {
+    .multiSteps ul {
+        padding-left: 10px;
+    }
+    .slideDetails {
+        display: block;
+    }
+}
+/* End of max 1199px */
+/* Start of max 991px */
+@media (max-width: 991px) {
+    .multiSteps ul {
+        display: none;
+    }
+    .btnWorkPosition, .btnPositon {
+        margin-bottom: unset !important;
+    }
+    .hideLine {
+        display: none;
+    }
+    .mobileViewSteps {
+        display: block;
+    }
+    
+}
+/* End of max 991px */
+/* Start of max 720px */
+@media (max-height: 720px) {
+    .form-card {
+        min-height: 700px !important;
+    }
+}
+/* End of max 720px */
+/* Start of max 670px and max width 520px */
+@media (max-height: 670px) and (max-width: 520px) {
+    .form-card {
+        min-height: 500px !important;
+    }
+}
+/* End of max 670px */
+/* Start of max 720px */
+@media (min-height: 720px) {
+    .form-card {
+        min-height: 700px !important;
+    }
+}
+/* End of max 720px */

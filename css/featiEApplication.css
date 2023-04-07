@@ -1,0 +1,707 @@
+/* 
+Redesigned layout
+Jay-ar Olivas
+March 14, 2023  
+*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;800&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box !important;
+    font-size: 12px;
+    font-family: "Montserrat", sans-serif !important;
+}
+
+html,
+body {
+    scroll-behavior: smooth !important;
+}
+
+.mainBody {
+    width: 100%;
+    margin: 0;
+}
+
+/* =========Start of Left design========= */
+.leftDesign {
+    background: #003399;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+}
+
+.leftDesign img {
+    width: 90%;
+    margin-bottom: 25px;
+}
+
+.carousel {
+    box-shadow: 4px 5px 3px 0px rgb(0 0 0 / 25%);
+}
+
+.carousel-inner {
+    border-radius: 5px;
+}
+
+.carousel-inner img {
+    margin-bottom: 0;
+}
+
+.carousel-item img {
+    animation: fadeCarousel 1s ease-in-out;
+}
+/* =========End of Left design========= */
+
+/* ======Start of right design======= */
+.rightDesign {
+    padding: 40px 50px;
+    overflow-x: hidden;
+}
+
+.rightDesign header {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.rightDesign header h1 {
+    color: #0b50a2;
+    font-weight: 700;
+    font-size: 2.3rem;
+}
+
+.icon-step-by-step ul {
+    display: flex;
+    margin: auto;
+}
+
+.icon-step-by-step ul li .progress-title {
+    font-size: 12px;
+    line-height: 13px;
+    font-weight: 700;
+}
+
+.icon-step-by-step ul li {
+    list-style: none;
+    width: 130px;
+    text-align: center;
+    position: relative;
+    color: #d3d3d3;
+}
+
+#icon-color1 {
+    color: #003399 !important;
+}
+
+#list-text1 {
+    color: #003399 !important;
+}
+
+.icon-step-by-step {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-step-by-step .icons {
+    font-size: 40px;
+    color: #d3d3d3;
+    transition: .4s ease-in;
+}
+
+.icon-step-by-step hr {
+    width: 103px;
+    border: 2px solid;
+    position: absolute;
+    top: 9px;
+    left: -53px;
+    z-index: -1;
+    color: #d3d3d3;
+}
+
+.icons, .icon-circle {
+    cursor: pointer;
+}
+
+.icon-step-by-step #hr-circle1,
+#hr-circle2 {
+    width: 50px;
+    left: 131px;
+    z-index: 1;
+}
+
+.icon-position .icon-circle {
+    position: absolute;
+    top: 8px;
+    left: 112px;
+    font-size: 30px;
+    z-index: 2;
+    color: #d3d3d3;
+}
+/* ======End of right design======= */
+
+/* ======Start of Personal information======= */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form-control:disabled, form-check-input:disabled {
+    background-color: #fff;
+    opacity: 1;
+}
+
+.form-check-input:disabled~.form-check-label {
+	color: unset !important;
+}
+
+.form-check-label:hover {
+    cursor: pointer;
+}
+
+.form-control {
+    padding: 0.555rem 0.75rem !important;
+}
+
+select.form-control:not([size]):not([multiple]) {
+    height: calc(2.25rem + 8px) !important;
+}
+
+input,
+select {
+    border-radius: 8px !important;
+    border: 2px solid #ced4da !important;
+}
+
+.form-row > .col,
+.form-row > [class*="col-"] {
+    padding-right: 15px;
+    padding-left: 5px;
+}
+
+.scanned::-webkit-file-upload-button {
+    border-radius: 4px;
+    border: 1px solid #d3d3d3;
+    padding: 5px;
+}
+
+input[type="file"] {
+    padding: 0 !important;
+    border: none !important;
+    border-radius: unset !important;
+}
+
+section h5 {
+    color: #0b50a2;
+    font-weight: 700;
+}
+
+.breakLine {
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.required_field::before {
+    content: "*";
+    color: red;
+}
+
+/* ========Button prev and next======== */
+.btnWorkPosition {
+    float: unset !important;
+}
+
+.desktop, .mobile {
+    display: none;
+}
+
+.btnPositon {
+    position: absolute;
+    right: 25px;
+    bottom: 0;
+}
+
+button:disabled {
+    background: #d3d3d3 !important;
+}
+
+/* Button next */
+.btnPositon .listButton {
+    /* width: 210px; */
+    border-radius: 10px;
+    list-style: none;
+    position: relative;
+    display: inline-block;
+    background: #0b50a2;
+}
+
+.btnPositon .listButton button {
+    width: 210px;
+    border-radius: 10px;
+    background: transparent;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    color: #fff;
+    box-shadow: 2px 2px 4px 0px grey;
+    position: relative;
+    z-index: 1080;
+}
+
+.btnPositon .listButton button:hover {
+    background: #003399;
+    transition: 0.3s ease;
+}
+
+.listButton button span:nth-child(1) {
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.listButton .btnIcon {
+    position: absolute;
+    right: 10px;
+    font-size: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.listButton span, .btnIcon {
+    display: block;
+    position: relative;
+    z-index: -1;
+}
+
+.listButton span:nth-child(3) {
+    line-height: 6px;
+}
+
+/* Button previous */
+.btnPositon .listButtonPrev {
+    /* width: 210px; */
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    display: inline-block;
+}
+
+.btnPositon .listButtonPrev button {
+    width: 210px;
+    border-radius: 10px;
+    padding: 15px 15px 15px 50px;
+    text-align: left;
+    color: #000;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.listButtonPrev .btnIconPrev {
+    position: absolute;
+    left: 0px;
+    font-size: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.listButtonPrev span {
+    font-weight: 700;
+    font-size: 13px;
+}
+
+/* =======Form cards========= */
+.form-card {
+    animation: fade 250ms ease-in-out forwards;
+    min-height: 70vh !important;
+    padding-bottom: 150px;
+}
+
+.form-card.active {
+    animation: slide 250ms 125ms ease-in-out both;
+}
+
+.hide {
+    display: none;
+}
+
+/* Application information */
+.imagePrevContainer {
+    width: 160px;
+    margin: auto;
+}
+.imagePreview {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    background-position: center center;
+    /* background:url(../image/preview.png); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: inline-block;
+    box-shadow: 0px 0px 2px 0px gray;
+}
+
+.imagePreview .uploadIcon {
+    font-size: 12rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    color: #d3d3d3;
+}
+
+.uploadBtn {
+    display: block;
+    border-radius: 0px;
+    margin-top: -5px;
+    padding: 5px 12px 10px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    color: #fff;
+    background-color: #0b50a2;
+    border-color: #0b50a2;
+    position: relative;
+    cursor: pointer;
+}
+
+.imgUp {
+    margin-bottom: 15px;
+}
+
+.uploadBtn .uploadCamera {
+    font-size: 20px;
+    transform: translate(0px, 4px);
+    margin-left: 5px;
+}
+
+.uploadFile[type="file"] {
+    display: none;
+}
+
+.imagePrevContainer p {
+    text-align: center;
+    margin-top: 5px;
+    font-weight: 700;
+}
+
+.positionTransferee {
+    position: absolute;
+    top: 55%;
+    left: 20px;
+    transform: translate(0px);
+}
+
+/* Family data */
+/* Functional button css */
+.btnPosition .buttonRow {
+    position: absolute;
+    top: 45%;
+    left: 43%;
+    transform: translateX(-50%);
+    border: none;
+    background: none;
+    padding: 5px 25px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.buttonRow .addColor {
+	color: #003399 !important;
+}
+
+.btnPosition .buttonRow .btnAddRemoveIcon {
+    position: absolute;
+    font-size: 25px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: red;
+}
+
+/* .btnPosition .buttonRow .btnAddRemoveIcon:hover {
+	color: #850404;
+    transition: 0.3s;
+} */
+
+.btnPosition .buttonRow:hover {
+    color: #0b50a2;
+    transition: 0.3s;
+}
+
+/* .btnPosition .buttonRow .btnAddRemove:hover {
+    color: #850404;
+    transition: 0.3s;
+} */
+
+.btnPosition .buttonRow .btnAddRemove {
+    cursor: pointer;
+    position: absolute;
+    padding-left: 35px;
+    font-weight: 700;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none !important;
+    font-size: 14px;
+    color: red;
+}
+
+/* work add button  */
+.btnWorkPosition {
+    position: relative;
+}
+
+.btnWorkPosition .buttonRow {
+    position: absolute;
+    top: 45%;
+    right: 50px;
+    transform: translateX(-50%);
+    border: none;
+    background: none;
+    padding: 5px 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btnWorkPosition .buttonRow .btnAddRemoveIcon {
+    position: absolute;
+    font-size: 25px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: red;
+}
+
+.btnWorkPosition .buttonRow .btnAddRemove {
+    cursor: pointer;
+    position: absolute;
+    padding-left: 35px;
+    font-weight: 700;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none !important;
+    font-size: 14px;
+    color: red;
+}
+
+/* .btnWorkPosition .buttonRow .btnAddRemove:hover {
+    color: #0b50a2;
+    transition: 0.3s;
+}
+
+.btnWorkPosition .buttonRow:hover {
+    color: #0b50a2;
+    transition: 0.3s;
+} */
+
+.hyphen::before {
+    content: "-";
+    position: absolute;
+    left: -6px;
+    font-size: 35px;
+    top: 65%;
+    color: #aaaaaa;
+    transform: translateY(-50%);
+}
+
+.radioPosition {
+    position: relative;
+}
+
+.radioPosition span {
+    position: relative;
+    left: 20px;
+    top: 50%;
+}
+
+.radioPosition .checkBoxESC {
+    position: relative;
+    right: -92px;
+    top: 35px;
+    width: 148px;
+    z-index: 1;
+}
+
+/* Source of information */
+.SourceInformation {
+    margin-bottom: 6px;
+}
+
+#socialMediaDiv li {
+    list-style: none;
+}
+
+#socialMediaDiv {
+    margin: 5px 5px 5px 15px;
+}
+
+.form-check-label {
+    margin-bottom: 0;
+    line-height: 20px;
+}
+
+/* .form-group {
+    margin-bottom: 2rem !important;
+} */
+
+#previewForm .form-group {
+    margin-bottom: 0.3rem !important;
+}
+
+.agreeConditions a {
+    color: #212529;
+}
+
+.agreeConditions a:hover {
+    color: #0b50a2;
+    transition: 0.3s;
+}
+.submitBtnPosition {
+	top: 50px;
+	right: 0;
+}
+
+/* Keyframes */
+@keyframes fadeCarousel {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.2;
+    }
+    40% {
+        opacity: 0.4;
+    }
+    60% {
+        opacity: 0.6;
+    }
+    80% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.75);
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+.modalFooter {
+    padding: 10px 40px 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.modalFooter li {
+	list-style: none;
+	margin: auto 10px;
+}
+
+.btnClose {
+	padding: 10px 50px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 10px;
+    border: none;
+    background: #d3d3d3;
+    color: #003399;
+    cursor: pointer;
+}
+
+.btnClose:hover {
+	background: #c5c5c5;
+}
+
+#save {
+	padding: 10px 50px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 10px;
+    border: none;
+    background: #003399;
+    color: white;
+    cursor: pointer;
+}
+
+#save:hover {
+	background: #0b50a2;
+}
+
+#showvalidationPopup:hover {
+	background: #003399;
+	color: white;
+	transition: .3s;
+}
+
+
+/* ======================================= */
+/* Endorsement Form */
+.hrLine {
+    width: 80%;
+    margin: auto;
+    margin-top: 1rem !important;
+}
+.mainTitle h5 {
+    color: #0b50a2;
+    font-weight: 700;
+    margin: 20px 0;
+}
+.btnFormSubmit {
+    margin-top: 20px;
+    border: none !important; 
+    background: #003399;
+    color: #fff;
+    padding: 10px 30px;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 18px !important;
+    cursor: pointer;
+    transition: .3s;
+}
+.btnFormSubmit:hover {
+    background: #0b50a2;
+}
+footer {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+}
+footer img {
+    width: 190px;
+}

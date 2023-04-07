@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" />
+        <script src="https://kit.fontawesome.com/1b687bfc7e.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js"></script>
+        <link rel="stylesheet" href="css/featiEApplication.css" />
+        <link rel="stylesheet" href="css/featiEApplicationMedia.css" />
+        <link rel="stylesheet" href="css/documentRequestStyle.css"/>
+
+        <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico" />
+        <title>Online Document Request Form</title>
+    </head>
+    <body>
+        <div class="row mainBody" data-multi-step>
+            <div class="col-lg-3 leftDesign">
+                <div class="left-container">
+                    <img src="image/logo.png" alt="feati-logo" />
+                </div>
+                <div class="multiSteps">
+                    <ul>
+                        <li data-first class="navList active" id="nav1"><iconify-icon class="iconCheck" id="iconCheck1" icon="material-symbols:check-circle-rounded"></iconify-icon> Step 1: Personal Information</li>
+                        <li data-second class="navList unclickable" id="nav2"><iconify-icon class="iconCheck" id="iconCheck2" icon="material-symbols:check-circle-rounded"></iconify-icon> Step 2: Claiming Option</li>
+                        <li data-third class="navList unclickable" id="nav3"><iconify-icon class="iconCheck" id="iconCheck3" icon="material-symbols:check-circle-rounded"></iconify-icon>Step 3: Document Request Details</li>
+                        <li data-fourth class="navList unclickable" id="nav4"><iconify-icon class="iconCheck" id="iconCheck4" icon="material-symbols:check-circle-rounded"></iconify-icon>Step 4: Document Requirements</li>
+                        <li data-fifth class="navList unclickable" id="nav5"><iconify-icon class="iconCheck" id="iconCheck5" icon="material-symbols:check-circle-rounded"></iconify-icon>Step 5: FEATIU’s Data Privacy Policy</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-9 rightDesign" >
+                <!-- header section -->
+                <header>
+                    <h1>Online Document Request Form</h1>
+                    <hr class="breakLine hideLine">
+                    <div class="mobileViewSteps">
+                        <ul>
+                            <li data-first class="navListMobile activeMobile" id="navMobile1">Step 1</li>
+                            <li data-second class="navListMobile unclickable" id="navMobile2">
+                                <hr class="lineSteps" id="line2">
+                                Step 2
+                            </li>
+                            <li data-third class="navListMobile unclickable" id="navMobile3">
+                                <hr class="lineSteps" id="line3">
+                                Step 3
+                            </li>
+                            <li data-fourth class="navListMobile unclickable" id="navMobile4">
+                                <hr class="lineSteps" id="line4">
+                                Step 4
+                            </li>
+                            <li data-fifth class="navListMobile unclickable" id="navMobile5">
+                                <hr class="lineSteps" id="line5">
+                                Step 5
+                            </li>
+                        </ul>
+                    </div>
+                </header>
+                <!-- header section -->
+                <br />
+                <br />
+                <div class="multi-step-form">
+                    <form action="">
+                        <!-- Personal Information -->
+                        <section class="form-card" data-step>
+                            <h5>Personal Information</h5>
+                            <div class="descriptionNote">
+                                <ol>
+                                    <li>Fill in the required fields (<span style="color: red;">*</span>).</li>
+                                    <li>Enter your name during your stay at FEATI University.</li>
+                                    <li>Provide your correct and active contact and email information.</li>
+                                </ol>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="studentNo" class="required_field">Student Number</label>
+                                    <input type="text" class="form-control" path="studentNo" maxlength="100" onkeypress="return isAlphaNumWithEnye(event)"/>
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="firstname" class="required_field">First Name</label>
+                                    <input type="text" class="form-control" path="firstname" maxlength="100" onkeypress="return isAlphaNumWithEnye(event)" />
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="middlename">Middle Name (Optional)</label>
+                                    <input type="text" class="form-control" path="middlename" maxlength="100" onkeypress="return isAlphaNumWithEnye(event)" />
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="lastname" class="required_field">Last Name</label>
+                                    <input type="text" class="form-control" path="lastname" maxlength="100" onkeypress="return isAlphaNumWithEnye(event)"/>
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="dateOfBirth" class="required_field">Date of Birth</label>
+                                    <input type="date" class="form-control" path="dateOfBirth" maxLength="10"/>
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="gender" class="required_field">Gender at Birth</label>
+                                    <select id="gender" class="form-control" path='gender'>
+                                        <option value="Male">Male</option>
+								        <option value="Female">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <hr class="breakLine"><br>
+
+                            <b>Father Name</b><br><br>
+                            <div class="form-row">
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="fatherFirstname" class="required_field">First Name</label>
+                                    <input type="text" class="form-control" path="fatherFirstname" maxlength="100" onkeypress="return isAlphaNumWithEnye(event)" />
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="fatherMiddlename">Middle Name</label>
+                                    <input type="text" class="form-control" path="fatherMiddlename" maxlength="100" onkeypress="return isAlphaNumWithEnye(event)" />
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="fatherLastname" class="required_field">Last Name</label>
+                                    <input type="text" class="form-control" path="fatherLastname" maxlength="100" onkeypress="return isAlphaNumWithEnye(event)"/>
+                                </div>
+                            </div>
+                            <br>
+                            <b>Mother's Maiden Name</b><br><br>
+                            <div class="form-row">
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="motherFirstname" class="required_field">First Name</label>
+                                    <input type="text" class="form-control" path="motherFirstname" maxlength="100" onkeypress="return isAlphaNumWithEnye(event)" />
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="motherMiddlename">Middle Name</label>
+                                    <input type="text" class="form-control" path="motherMiddlename" maxlength="100" onkeypress="return isAlphaNumWithEnye(event)" />
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="motherLastname" class="required_field">Last Name</label>
+                                    <input type="text" class="form-control" path="motherLastname" maxlength="100" onkeypress="return isAlphaNumWithEnye(event)"/>
+                                </div>
+                            </div>
+
+                            <hr class="breakLine"><br>
+
+                            <b>Present Address</b><br><br>
+                            <div class="form-row">
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="presentAddressBldgNo" class="required_field">Apartment/Unit/Building/Floor/etc.</label>
+                                    <input type="text" class="form-control" path="presentAddressBldgNo" id="presentAddressBldgNo" maxlength="200" />
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="presentAddressStreetName" class="required_field">Street Name</label>
+                                    <input type="text" class="form-control" path="presentAddressStreetName" id="presentAddressStreetName" maxlength="200" />
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="presentBarangay" class="required_field">Barangay</label>
+                                    <input type="text" class="form-control" path="presentBarangay" id="presentBarangay" maxlength="200" />
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="presentAddressCity" class="required_field">City</label>
+                                    <input type="text" class="form-control" path="presentAddressCity" id="presentAddressCity" maxlength="200" />
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="presentAddressProvince" class="required_field">Province</label>
+                                    <input type="text" class="form-control" path="presentAddressProvince" id="presentAddressProvince" maxlength="200" />
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="presentAddressCountry" class="required_field">Country</label>
+                                    <input type="text" class="form-control" path="presentAddressCountry" id="presentAddressCountry" maxlength="200" />
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="presentAddressZipCode" class="required_field">Zip Code</label>
+                                    <input type="text" class="form-control" path="presentAddressZipCode" id="presentAddressZipCode" maxlength="200" />
+                                </div>
+                            </div>
+                            <br>
+                            <b>Permanent Address</b><br>
+                            <div class="form-group col-lg-4 col-md-6">
+                                <input type="checkbox"  id="samePermanentAddress" value="1" class="form-check-input"/>
+                                <label for="samePermanentAddress" class="form-check-label" id="samePermanentAddress">&nbsp;Same as Present Address</label>
+                            </div>
+                            <br>
+                            <div class="form-row">
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="permanentAddressBldgNo" class="required_field">Apartment/Unit/Building/Floor/etc.</label>
+                                    <input type="text" class="form-control" path="permanentAddressBldgNo" id="permanentAddressBldgNo" maxlength="200" />
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="permanentAddressStreetName" class="required_field">Street Name</label>
+                                    <input type="text" class="form-control" path="permanentAddressStreetName" id="permanentAddressStreetName" maxlength="200" />
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="permanentBarangay" class="required_field">Barangay</label>
+                                    <input type="text" class="form-control" path="permanentBarangay" id="permanentBarangay" maxlength="200" />
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="permanentAddressCity" class="required_field">City</label>
+                                    <input type="text" class="form-control" path="permanentAddressCity" id="permanentAddressCity" maxlength="200" />
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="permanentAddressProvince" class="required_field">Province</label>
+                                    <input type="text" class="form-control" path="permanentAddressProvince" id="permanentAddressProvince" maxlength="200" />
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="permanentAddressCountry" class="required_field">Country</label>
+                                    <input type="text" class="form-control" path="permanentAddressCountry" id="permanentAddressCountry" maxlength="200" />
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="permanentAddressZipCode" class="required_field">Zip Code</label>
+                                    <input type="text" class="form-control" path="permanentAddressZipCode" id="permanentAddressZipCode" maxlength="200" />
+                                </div>
+                            </div>
+
+                            <hr class="breakLine"><br>
+
+                            <div class="form-row">
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="contactNo" class="required_field">Contact No</label>
+                                    <input type="text" class="form-control" path="contactNo" id="contactNo" maxlength="11" onkeypress="return isDecimal(this.value,event)" />
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="emailAd" class="required_field">Email Address</label>
+                                    <input type="email" class="form-control" placeholder="email@example.com" path="emailAd" id="emailAd" maxlength="100" />
+                                </div>
+                            </div>
+                            <br>
+                            <b>Inclusive Year of Attendance</b><br><br>
+                            <div class="form-row">
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label for="educBgFrom1">from(Year)</label>
+                                            <input type="text" class="form-control" path="yearFrom" maxlength="4" onkeypress="return isDecimal(this.value,event)" />
+                                        </div>
+                                        <div class="col-6 hyphen">
+                                            <label for="educBgTo1">To(Year)</label>
+                                            <input type="text" class="form-control" path="yearTo" maxlength="4" onkeypress="return isDecimal(this.value,event)" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br><br><br><br><br><br>
+
+                            <!-- button next -->
+                            <ul class="btnPositon">
+                                <li class="listButton">
+                                    <button type="button" data-next id="btnNext1">
+                                        <span data-next>NEXT STEP</span>
+                                        <span data-next>Claiming Option</span>
+                                        <iconify-icon data-next icon="material-symbols:arrow-circle-right-rounded" class="btnIcon"></iconify-icon>
+                                    </button>
+                                </li>
+                            </ul>
+                            <!-- button next -->
+                        </section>
+                        <!-- Personal Information -->
+
+                        <!-- Claiming Option -->
+                        <section class="form-card" data-step>
+                            <h5>Claiming Options</h5>
+                            <div class="descriptionNote">
+                                <ol>
+                                    <li>Choose if you want to pickup the Document at FEATI University or have it delivered at your doorstep.</li>
+                                    <li>In case you opt to have it delivered, the University Registrar will provide the Delivery fee after reviewing your request.</li>
+                                    <li>Check the "Same as Home Address" box if the Delivery address is the same with your Home Address.</li>
+                                </ol>
+                            </div>
+                            <div class="form-group col-lg-3 col-md-6 radioPosition" style="margin-bottom: 1rem !important;">
+                                <input type="radio" class="form-check-input" path="isForDelivery" name="isForDelivery" id="pickup" value="0" checked="true">
+                                <label for="pickup" class="form-check-label" id="pickup">&nbsp;Pick up</label>
+                            </div>
+                            <div class="form-group col-lg-3 col-md-6 radioPosition">
+                                <input type="radio" class="form-check-input" path="isForDelivery" name="isForDelivery" id="delivery" value="1"/>
+                                <label for="delivery" class="form-check-label" id="delivery">&nbsp;Delivery</label>
+                            </div><br>
+                            
+                            <div id="forDelivery">
+                                <div class="form-row marginBottom">
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label for="addressee" class="required_field">Addressee</label>
+                                        <input type="text" class="form-control" path="addressee" id="addressee" maxlength="100" onkeypress="return isAlphaNumWithEnye(event)" />
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label for="addresseeContactNo" class="required_field">Addressee Contact No.</label>
+                                        <input type="text" class="form-control" path="addresseeContactNo" maxlength="100" onkeypress="return isAlphaNumWithEnye(event)" />
+                                    </div>
+                                </div>
+                                <br>
+                                <b>Mailing Address</b><br>
+                                <div class="form-group col-lg-4 col-md-6">
+                                    <input type="checkbox" class="form-check-input" id="sameMailingAddress" value="1">
+                                    <label for="sameMailingAddress" class="form-check-label" id="sameMailingAddress">&nbsp;Same as Present Address</label>
+                                </div>
+                                <br>
+                                <div class="form-row">
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label for="mailingAddressBldgNo" class="required_field">Apartment/Unit/Building/Floor/etc.</label>
+                                        <input type="text" class="form-control" path="mailingAddressBldgNo" id="mailingAddressBldgNo" maxlength="200" />
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label for="mailingAddressStreetName" class="required_field">Street Name</label>
+                                        <input type="text" class="form-control" path="mailingAddressStreetName" id="mailingAddressStreetName" maxlength="200" />
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label for="mailingBarangay" class="required_field">Barangay</label>
+                                        <input type="text" class="form-control" path="mailingBarangay" id="mailingBarangay" maxlength="200" />
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label for="mailingAddressCity" class="required_field">City</label>
+                                        <input type="text" class="form-control" path="mailingAddressCity" id="mailingAddressCity" maxlength="200" />
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label for="mailingAddressProvince" class="required_field">Province</label>
+                                        <input type="text" class="form-control" path="mailingAddressProvince" id="mailingAddressProvince" maxlength="200" />
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label for="mailingAddressCountry" class="required_field">Country</label>
+                                        <input type="text" class="form-control" path="mailingAddressCountry" id="mailingAddressCountry" maxlength="200" />
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label for="mailingAddressZipCode" class="required_field">Zip Code</label>
+                                        <input type="text" class="form-control" path="mailingAddressZipCode" id="mailingAddressZipCode" maxlength="200" />
+                                    </div>
+                                </div>
+                            </div>
+                            <br><br><br><br><br><br>
+
+                            <!-- button previous and next -->
+                            <!-- Desktop Button-->
+                            <ul class="btnPositon desktop">
+                                <li class="listButtonPrev">
+                                    <button type="button" data-previous id="btnPrev2">
+                                        <iconify-icon data-previous icon="material-symbols:arrow-circle-left-rounded" class="btnIconPrev"></iconify-icon>
+                                        <span data-previous>BACK TO</span><br />
+                                        <span data-previous>PREVIOUS STEP</span>
+                                    </button>
+                                </li>
+                                <li class="listButton">
+                                    <button type="button" data-next btn id="btnNext2">
+                                        <span data-next>NEXT STEP</span>
+                                        <span data-next>Document Request</span>
+                                        <span data-next>Details</span>
+                                        <iconify-icon data-next icon="material-symbols:arrow-circle-right-rounded" class="btnIcon"></iconify-icon>
+                                    </button>
+                                </li>
+                            </ul>
+                            <!-- Mobile Button-->
+                            <center>
+                                <ul class="btnPositon mobile">
+                                    <li class="listButtonPrev">
+                                        <button type="button" data-previous="" id="btnPrev2">
+                                            <iconify-icon data-previous="" icon="material-symbols:arrow-circle-left-rounded" class="btnIconPrev"></iconify-icon>
+                                            <span data-previous="">Previous</span>
+                                        </button>
+                                    </li>
+                                    <li class="listButton">
+                                        <button type="button" data-next btn id="mobileBtnNext2">
+                                            <span data-next>NEXT STEP</span>
+                                            <span data-next>Application information</span>
+                                            <iconify-icon data-next icon="material-symbols:arrow-circle-right-rounded" class="btnIcon"></iconify-icon>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </center>
+                            <!-- button previous and next -->
+                        </section>
+                        <!-- Claiming Option -->
+
+                        <!-- Document Request Details -->
+                        <section class="form-card" data-step>
+                            <h5>Document Request Details</h5>
+                            <div class="descriptionNote">
+                                <ol>
+                                    <li>Provide the Document request details and make sure to fill in the required fields (<span style="color: red;">*</span>), then click Add.</li>
+                                    <li>You can add multiple document types in one request. Just click "Add more documents" button after each request.</li>
+                                </ol>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="documentRequestTypeCategoryId" class="required_field">Document Request Type Category</label>
+                                    <select id="documentRequestTypeCategoryId" class="form-control">
+                                        <option value="High School" selected>High School</option>
+                                        <option value="College">College</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-lg-3 col-md-6" id="shsTr">
+                                    <label for="strand" class="required_field">Strand</label>
+                                    <select class="form-control" path='strand' id="strand">
+                                        <option value=""></option>
+                                        <option value="ABM: Business">ABM: Business</option>
+                                        <option value="ABM: Tourism">ABM: Tourism</option>
+                                        <option value="ABM: Custom Administration">ABM: Custom Administration</option>
+                                        <option value="HUMSS: Communication">HUMSS: Communication</option>
+                                        <option value="HUMSS: Fine Arts">HUMSS: Fine Arts</option>
+                                        <option value="HUMSS (General)">HUMSS (General)</option>
+                                        <option value="STEM (General)">STEM (General)</option>
+                                        <option value="STEM: Aero">STEM: Aero</option>
+                                        <option value="STEM: Engineering">STEM: Engineering</option>
+                                        <option value="STEM: Maritime">STEM: Maritime</option>
+                                        <option value="STEM: Architecture">STEM: Architecture</option>
+                                        <option value="STEM: Computer Studies">STEM: Computer Studies</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6" id="collegeTr">
+                                    <label for="course" class="required_field">Degree Program</label>
+                                    <select class="form-control" path='course'>
+                                        <option value=""></option>
+                                        <option value="BACHELOR OF SCIENCE IN ARCHITECTURE">BACHELOR OF SCIENCE IN ARCHITECTURE</option>
+                                        <option value="BACHELOR OF SCIENCE IN BUSINESS ADMINISTRATION Major in Marketing Management">BACHELOR OF SCIENCE IN BUSINESS ADMINISTRATION Major in Marketing Management</option>
+                                        <option value="BACHELOR OF SCIENCE IN BUSINESS ADMINISTRATION Major in Financial Management">BACHELOR OF SCIENCE IN BUSINESS ADMINISTRATION Major in Financial Management</option>
+                                        <option value="BACHELOR OF SCIENCE IN BUSINESS ADMINISTRATION Major in Operations Management">BACHELOR OF SCIENCE IN BUSINESS ADMINISTRATION Major in Operations Management</option>
+                                        <option value="BACHELOR OF SCIENCE IN TOURISM MANAGEMENT">BACHELOR OF SCIENCE IN TOURISM MANAGEMENT</option>
+                                        <option value="BACHELOR OF SCIENCE IN CUSTOMS ADMINISTRATION">BACHELOR OF SCIENCE IN CUSTOMS ADMINISTRATION</option>
+                                        <option value="BACHELOR OF SCIENCE IN AERONAUTICAL ENGINEERING">BACHELOR OF SCIENCE IN AERONAUTICAL ENGINEERING</option>
+                                        <option value="BACHELOR OF SCIENCE IN GEODETIC ENGINEERING">BACHELOR OF SCIENCE IN GEODETIC ENGINEERING</option>
+                                        <option value="BACHELOR OF SCIENCE IN CIVIL ENGINEERING">BACHELOR OF SCIENCE IN CIVIL ENGINEERING</option>
+                                        <option value="BACHELOR OF SCIENCE IN ELECTRICAL ENGINEERING">BACHELOR OF SCIENCE IN ELECTRICAL ENGINEERING</option>
+                                        <option value="BACHELOR OF SCIENCE IN ELECTRONICS ENGINEERING">BACHELOR OF SCIENCE IN ELECTRONICS ENGINEERING</option>
+                                        <option value="BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY">BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY</option>
+                                        <option value="BACHELOR OF SCIENCE IN MECHANICAL ENGINEERING">BACHELOR OF SCIENCE IN MECHANICAL ENGINEERING</option>
+                                        <option value="BACHELOR OF SCIENCE IN CIVIL ENGINEERING WITH RAILWAY SPECIALIZATION">BACHELOR OF SCIENCE IN CIVIL ENGINEERING WITH RAILWAY SPECIALIZATION</option>
+                                        <option value="BACHELOR OF SCIENCE IN ELECTRICAL ENGINEERING WITH RAILWAY SPECIALIZATION">BACHELOR OF SCIENCE IN ELECTRICAL ENGINEERING WITH RAILWAY SPECIALIZATION</option>
+                                        <option value="BACHELOR OF SCIENCE IN ELECTRONICS ENGINEERING WITH RAILWAYS SPECIALIZATION">BACHELOR OF SCIENCE IN ELECTRONICS ENGINEERING WITH RAILWAYS SPECIALIZATION</option>
+                                        <option value="BACHELOR OF SCIENCE IN MECHANICAL ENGINEERING WITH RAILWAY SPECIALIZATION">BACHELOR OF SCIENCE IN MECHANICAL ENGINEERING WITH RAILWAY SPECIALIZATION</option>
+                                        <option value="BACHELOR OF SCIENCE IN MARINE TRANSPORTATION">BACHELOR OF SCIENCE IN MARINE TRANSPORTATION</option>
+                                        <option value="BACHELOR OF SCIENCE IN MARINE ENGINEERING">BACHELOR OF SCIENCE IN MARINE ENGINEERING</option>
+                                        <option value="BACHELOR OF FINE ARTS IN VISUAL COMMUNICATION">BACHELOR OF FINE ARTS IN VISUAL COMMUNICATION</option>
+                                        <option value="BACHELOR OF ARTS IN COMMUNICATION">BACHELOR OF ARTS IN COMMUNICATION</option>		
+                                        
+                                        <option value="BACHELOR OF SCIENCE IN AIRCRAFT MAINTENANCE TECHNOLOGY">BACHELOR OF SCIENCE IN AIRCRAFT MAINTENANCE TECHNOLOGY</option>		
+                                        <option value="CERTIFICATE IN AIRCRAFT MAINTENANCE TECHNOLOGY">CERTIFICATE IN AIRCRAFT MAINTENANCE TECHNOLOGY</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label for="newCourseStrand" style="visibility: hidden;">not exist</label>
+                                    <input type="text" class="form-control" path="newCourseStrand" maxlength="100" onkeypress="return isAlphaNumWithEnye(event)" />
+                                    <p style="font-size: 10px;"> (Please fill-up if Strand/Course does not exists.)</p>
+                                </div>
+                            </div>
+
+                            <div class="tableBackground">
+                                <h6>DOCUMENT TYPE FORM</h6>
+                                <div class="form-row">
+                                    <div class="form-group col-xl-3 col-lg-4 col-md-5">
+                                        <label for="documentRequestTypeId" class="required_field">Document Type</label>
+                                        <select class="form-control" id="documentRequestTypeId" name="documentRequestTypeId" autocomplete="off">
+                                            <option value="0"></option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-xl-3 col-lg-4 col-md-5">
+                                        <label for="purpose" class="required_field">Purpose</label>
+                                        <input type="text" class="form-control" id="purpose" maxlength="200" onkeypress="return isAlphaNumWithEnye(event)" />
+                                    </div>
+                                    <div class="form-group col-xl-1 col-lg-2 col-md-2 col-6">
+                                        <label for="quantity" class="required_field">Quantity</label>
+                                        <input type="text" class="form-control" id="quantity" placeholder="0" maxLength="9" onkeypress="return isNumeric(event)" onpaste="return false;" />
+                                    </div>
+                                    <div class="form-group col-xl-1 col-lg-2 col-md-2 col-6">
+                                        <label for="">Price</label>
+                                        <input type="text" class="form-control documentPrice" placeholder="0" id="documentPriceSpan" readonly/>
+                                    </div>
+                                    <div class="form-group col-xl-4 col-lg-12 col-md-9">
+                                        <label for="">Breakdown of Fees</label>
+                                        <span id="documentBreakdownSpan"></span>
+                                        <p>(Transfer to CRED or HD - 845.00 GMC - 211.00 Doc. Stamp - 150.00) (Transfer  or HD - 845.00 GMC - 211.00 Doc. Stamp - ransfer to CRED or HD - 845.00 GMC - 211.00 Doc. Stamp - 150.00)</p>
+                                    </div>
+                                </div>
+                                <div style="position: relative;" class="docTypeBtnPosition">
+                                    <iconify-icon class="iconPlus" icon="ic:baseline-plus"></iconify-icon>
+                                    <input type="button" class="addDocumentBtn" value="Add" id="addDocumentButton" onclick="addDocumentButton(this.id)">
+                                </div>
+                            </div>
+
+                            <div class="tableBackgroundDetails">
+                                <table class="table table-hover docDetailList">
+                                    <thead>
+                                        <tr class="docDetailsTitle">
+                                            <th style="width: 185px;">Document Type</th>
+                                            <th style="width: 185px;">Purpose</th>
+                                            <th style="width: 90px;">Quantity</th>
+                                            <th style="width: 90px;">Price</th>
+                                            <th style="width: 340px;">Breakdown of Fees</th>
+                                            <th style="width: 130px;"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Certificate of Enrollment</td>
+                                            <td>To be use for the next enrollment in another school blah blah blah blah....</td>
+                                            <td style="text-align: center;">1</td>
+                                            <td style="text-align: center;">1,200</td>
+                                            <td>(Transfer to CRED or HD - 845.00 GMC - 211.00 Doc. Stamp - 150.00)</td>
+                                            <td style="position: relative;text-align: center; padding: 0;">
+                                                <span class="actionButtons leftBtn">
+                                                    <iconify-icon class="actionIcon" icon="material-symbols:edit"></iconify-icon>
+                                                    Edit
+                                                </span>
+                                                <span class="actionButtons delete">
+                                                    <iconify-icon class="actionIcon" icon="material-symbols:delete-forever-rounded"></iconify-icon>
+                                                    Delete
+                                                </span>
+                                                <!-- <span class="actionButtons">
+                                                    <iconify-icon class="actionIcon" icon="icon-park-solid:update-rotation"></iconify-icon>
+                                                    Update
+                                                </span> -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Certificate of Enrollment</td>
+                                            <td>To be use for the next enrollment in another school blah blah blah blah....</td>
+                                            <td style="text-align: center;">1</td>
+                                            <td style="text-align: center;">1,200</td>
+                                            <td>(Transfer to CRED or HD - 845.00 GMC - 211.00 Doc. Stamp - 150.00)</td>
+                                            <td style="position: relative;text-align: center; padding: 0;">
+                                                <span class="actionButtons leftBtn">
+                                                    <iconify-icon class="actionIcon" icon="material-symbols:edit"></iconify-icon>
+                                                    Edit
+                                                </span>
+                                                <span class="actionButtons delete">
+                                                    <iconify-icon class="actionIcon" icon="material-symbols:delete-forever-rounded"></iconify-icon>
+                                                    Delete
+                                                </span>
+                                                <!-- <span class="actionButtons">
+                                                    <iconify-icon class="actionIcon" icon="icon-park-solid:update-rotation"></iconify-icon>
+                                                    Update
+                                                </span> -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Certificate of Enrollment</td>
+                                            <td>To be use for the next enrollment in another school blah blah blah blah....</td>
+                                            <td style="text-align: center;">1</td>
+                                            <td style="text-align: center;">1,200</td>
+                                            <td>(Transfer to CRED or HD - 845.00 GMC - 211.00 Doc. Stamp - 150.00)</td>
+                                            <td style="position: relative;text-align: center; padding: 0;">
+                                                <span class="actionButtons leftBtn">
+                                                    <iconify-icon class="actionIcon" icon="material-symbols:edit"></iconify-icon>
+                                                    Edit
+                                                </span>
+                                                <span class="actionButtons delete">
+                                                    <iconify-icon class="actionIcon" icon="material-symbols:delete-forever-rounded"></iconify-icon>
+                                                    Delete
+                                                </span>
+                                                <!-- <span class="actionButtons">
+                                                    <iconify-icon class="actionIcon" icon="icon-park-solid:update-rotation"></iconify-icon>
+                                                    Update
+                                                </span> -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Certificate of Enrollment</td>
+                                            <td>To be use for the next enrollment in another school blah blah blah blah....</td>
+                                            <td style="text-align: center;">1</td>
+                                            <td style="text-align: center;">1,200</td>
+                                            <td>(Transfer to CRED or HD - 845.00 GMC - 211.00 Doc. Stamp - 150.00)</td>
+                                            <td style="position: relative;text-align: center; padding: 0;">
+                                                <span class="actionButtons leftBtn">
+                                                    <iconify-icon class="actionIcon" icon="material-symbols:edit"></iconify-icon>
+                                                    Edit
+                                                </span>
+                                                <span class="actionButtons delete">
+                                                    <iconify-icon class="actionIcon" icon="material-symbols:delete-forever-rounded"></iconify-icon>
+                                                    Delete
+                                                </span>
+                                                <!-- <span class="actionButtons">
+                                                    <iconify-icon class="actionIcon" icon="icon-park-solid:update-rotation"></iconify-icon>
+                                                    Update
+                                                </span> -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3" class="totalCharge"><b>Total Charge</b></td>
+                                            <td style="text-align: center;"><b>4,800</b></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="slideDetails">
+                                <span>Slide for more details</span><img src="slide.gif" alt="">
+                            </div>
+
+                            <br><br><br><br><br><br><br><br>
+
+                            <!-- button previous and next -->
+                            <ul class="btnPositon desktop">
+                                <li class="listButtonPrev">
+                                    <button type="button" data-previous id="btnPrev3">
+                                        <iconify-icon data-previous icon="material-symbols:arrow-circle-left-rounded" class="btnIconPrev"></iconify-icon>
+                                        <span data-previous>BACK TO</span><br />
+                                        <span data-previous>PREVIOUS STEP</span>
+                                    </button>
+                                </li>
+                                <li class="listButton">
+                                    <button type="button" data-next btn id="btnNext3">
+                                        <span data-next>NEXT STEP</span>
+                                        <span data-next>Document</span>
+                                        <span data-next>Requirements</span>
+                                        <iconify-icon data-next icon="material-symbols:arrow-circle-right-rounded" class="btnIcon"></iconify-icon>
+                                    </button>
+                                </li>
+                            </ul>
+                            <!-- Mobile Button-->
+                            <center>
+                                <ul class="btnPositon mobile">
+                                    <li class="listButtonPrev">
+                                        <button type="button" data-previous="" id="btnPrev3">
+                                            <iconify-icon data-previous="" icon="material-symbols:arrow-circle-left-rounded" class="btnIconPrev"></iconify-icon>
+                                            <span data-previous="">Previous</span>
+                                        </button>
+                                    </li>
+                                    <li class="listButton">
+                                        <button type="button" data-next btn id="mobileBtnNext3">
+                                            <span data-next>NEXT STEP</span>
+                                            <span data-next>Application information</span>
+                                            <iconify-icon data-next icon="material-symbols:arrow-circle-right-rounded" class="btnIcon"></iconify-icon>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </center>
+                            <!-- button previous and next -->
+                        </section>
+                        <!-- Document Request Details -->
+
+                        <!-- Document Requirements -->
+                        <section class="form-card" data-step>
+                            <h5>Document Requirements</h5>
+                            <div class="descriptionNote">
+                                1. Upload the required documents.<br>
+                                <ul>
+                                    <li>Copy of the student/requestor's government-issued ID, preferably passport with three (3) signatures beside it.</li>
+                                    <li><b>Photo/Selfie</b> of the requestor holding the ID.</li>
+                                    <li>Special Power of Attorney (SPA) for those sending their representatives to process the request and receive the printed school credential(s)/record(s).</li>
+                                    <li>Copy of valid government-issued ID of the authorized representative or attorney in-fact signed with three (3) signatures beside it.</li>
+                                    <li>For those requesting for the 2nd copy of their Diploma, a duly notarized affidavit of loss of the original document. The original hard copy of the notarized affidavit of 
+                                        loss should be submitted to Registrar's office personally or through courier before release of the requested diploma.</li>
+                                    <li>Kindly upload PNG, JPG or JPEG files only.</li>
+                                </ul>
+                            </div>
+
+                            <div id="documentRequirementsTable">
+                                <div class="form-row" id="savedDocumentRequirementsRow1">
+                                    <div class="form-group col-lg-3 col-md-4">
+                                        <label for="documentName">Document Name</label>
+                                        <input type="text" class="form-control" maxLength="200" name="documentRequestRequirementsForms[1].documentName" id="documentRequestRequirementsForms1documentName" onkeypress="return isAlphaNum(event)"/>
+                                    </div>
+                                    <div class="form-group col-lg-4 col-md-5">
+                                        <label for="documentFile">Document File</label>
+                                        <input type="file" class="form-control" id="documentRequestRequirementsForms1documentFile" name="documentRequestRequirementsForms[1].documentFile" accept="image/png,image/jpeg,image/jpg" />
+                                    </div>
+                                    <div class="form-group col-lg-5 col-md-3 addButton">
+                                        <div class="docFileLoop">
+                                            <span class="actionButtons leftBtn" id="addDocumentRequirementsButton1" onclick="addDocumentRequirementsButton(this.id)">
+                                                <iconify-icon class="actionIcon" icon="material-symbols:edit"></iconify-icon>
+                                                Add
+                                            </span>&nbsp;&nbsp;
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br><br><br><br><br><br><br><br>
+
+                            <!-- button previous and next -->
+                            <ul class="btnPositon desktop">
+                                <li class="listButtonPrev">
+                                    <button type="button" data-previous id="btnPrev4">
+                                        <iconify-icon data-previous icon="material-symbols:arrow-circle-left-rounded" class="btnIconPrev"></iconify-icon>
+                                        <span data-previous>BACK TO</span><br />
+                                        <span data-previous>PREVIOUS STEP</span>
+                                    </button>
+                                </li>
+                                <li class="listButton">
+                                    <button type="button" data-next btn id="btnNext4">
+                                        <span data-next>NEXT STEP</span>
+                                        <span data-next>FEATIU's Data</span>
+                                        <span data-next>Privacy</span>
+                                        <iconify-icon data-next icon="material-symbols:arrow-circle-right-rounded" class="btnIcon"></iconify-icon>
+                                    </button>
+                                </li>
+                            </ul>
+                            <!-- Mobile Button-->
+                            <center>
+                                <ul class="btnPositon mobile">
+                                    <li class="listButtonPrev">
+                                        <button type="button" data-previous="" id="btnPrev4">
+                                            <iconify-icon data-previous="" icon="material-symbols:arrow-circle-left-rounded" class="btnIconPrev"></iconify-icon>
+                                            <span data-previous="">Previous</span>
+                                        </button>
+                                    </li>
+                                    <li class="listButton">
+                                        <button type="button" data-next btn id="mobileBtnNext4">
+                                            <span data-next>NEXT STEP</span>
+                                            <span data-next>Application information</span>
+                                            <iconify-icon data-next icon="material-symbols:arrow-circle-right-rounded" class="btnIcon"></iconify-icon>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </center>
+                            <!-- button previous and next -->
+                        </section>
+                        <!-- Document Requirements -->
+
+                        <!-- FEATIU's data privacy Policy -->
+                        <section class="form-card" id="step9" data-step>
+                            <h5>FEATIU's Data Privacy Policy</h5>
+                            <br />
+                            <div class="form-group col-lg-12" style="position: relative;">
+                                <div class="SourceInformation">
+                                    <label class="form-check-label" for="dataPolicy">
+                                    <input type="checkbox" class="form-check-input"  id="dataPolicy" value="1" required/>&nbsp;
+                                    I have read and accept FEATIU's Data Privacy Policy and I am aware of the Cybercrime Act.</label>
+                                </div>
+                                <div class="SourceInformation">
+                                    <label class="form-check-label" for="automail">
+                                    <input type="checkbox" class="form-check-input" path="isReceiveEmail" id="automail" value="1" required/>&nbsp;
+                                    I would like to receive informational emails and promotional offers from FEATI University.</label>
+                                </div>
+                            </div>
+                            <br>
+                            <!-- recaptcha -->
+                            <!-- <div class="g-recaptcha" data-sitekey="6LeMnqUUAAAAAOiG4EqnJakjhf71-xkL7tAVu0zU"></div> -->
+                            <div id="recap"></div>
+                            <div id="html_element"></div>
+                            <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+
+                            <!-- button previous and next -->
+                            <input type="checkbox" id="isPolicyViewed" autocomplete="off" hidden />
+                            <br />
+                            <br />
+                            <br />
+                            <center>Wait, are you sure there are no errors in your personal information?</center>
+                            <center>Accurate data help in the easy retrieval of your record.</center>
+                            <center>Please click preview to review your entries.</center>
+                            <center>
+                                <ul class="btnPositon btnWorkPosition submitButton previewBtnPosition">
+                                    <input type="checkbox" id="Previewed" autocomplete="off" hidden/>
+									<input type="checkbox" id="isPolicyViewed" autocomplete="off" hidden/>
+                                    <li class="listButtonPrev" style="width: 150px;" id="btnNext5">
+                                        <button type="button" value="Preview" id="showvalidationPopup" style="width: 150px;border: 2px solid #7c7c7c;padding: 15px 50px 15px 60px;border-radius: 25px;">
+                                            <iconify-icon style="left: 18px" icon="icon-park-twotone:preview-open" class="btnIconPrev"></iconify-icon>
+                                            <span>PREVIEW</span>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </center>
+                            <!-- button previous and next -->
+                        </section>
+                        <!-- FEATIU's data privacy Policy -->
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <script src="js/documentRequest2023.js"></script>
+        <script src="js/documentRequest2.js"></script>
+        <script src="https://code.iconify.design/iconify-icon/1.0.4/iconify-icon.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/ulg/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+    </body>
+</html>
